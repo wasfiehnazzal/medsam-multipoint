@@ -63,17 +63,6 @@ writes `demo_result.png` (image, ground-truth outline, prediction fill, point
 prompts). `--show` selects which arm is drawn (`baseline`, `semi`, or `auto`).
 If `demo_points.npz` is absent, points are sampled at random from `--seed`.
 
-Illustrative single slice — not dataset averages (see the paper for those):
-
-| Arm | Points | DSC |
-|---|---|---|
-| Baseline (1 point) | 1 | 0.539 |
-| Semi-Automatic GT-guided | 14 | 0.965 |
-| Automatic | 14 | 0.967 |
-
-The single-point baseline varies a lot from slice to slice, so one slice can sit
-well below the dataset mean. This example is picked to show the effect clearly and
-is not representative of the averaged results reported in the paper.
 
 ## Data
 
