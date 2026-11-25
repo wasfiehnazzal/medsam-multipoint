@@ -43,7 +43,8 @@ pip install -r requirements.txt
 pip install git+https://github.com/bowang-lab/MedSAM.git
 ```
 
-Place the point-prompt checkpoint at `checkpoints/medsam_point_prompt_flare22.pth`.
+Use a MedSAM ViT-B point-prompt checkpoint, placed at
+`checkpoints/medsam_point_prompt_flare22.pth` (not redistributed here).
 
 ## Run
 
@@ -62,17 +63,22 @@ writes `demo_result.png` (image, ground-truth outline, prediction fill, point
 prompts). `--show` selects which arm is drawn (`baseline`, `semi`, or `auto`).
 If `demo_points.npz` is absent, points are sampled at random from `--seed`.
 
-Bundled slice (liver), with the provided checkpoint:
+Illustrative single slice — not dataset averages (see the paper for those):
 
 | Arm | Points | DSC |
 |---|---|---|
-| Baseline | 1 | 0.539 |
+| Baseline (1 point) | 1 | 0.539 |
 | Semi-Automatic GT-guided | 14 | 0.965 |
 | Automatic | 14 | 0.967 |
 
+The single-point baseline varies a lot from slice to slice, so one slice can sit
+well below the dataset mean. This example is picked to show the effect clearly and
+is not representative of the averaged results reported in the paper.
+
 ## Data
 
-One slice as two `.npy` files (2D):
+The bundled demo is a single abdominal CT slice from the FLARE22 dataset,
+included only for illustration. Two `.npy` files (2D):
 
 ```
 assets/demo_image.npy    # image (2D or H×W×3)

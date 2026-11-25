@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import torch
 import torch.nn.functional as F
-from scipy.ndimage import label as ndi_label
 from segment_anything import sam_model_registry
 
 
